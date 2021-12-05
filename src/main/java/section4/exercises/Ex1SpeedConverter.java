@@ -2,16 +2,6 @@ package section4.exercises;
 
 public class Ex1SpeedConverter {
 
-    public static void main(String[] args) {
-        double kilomerters = -9;
-
-        long milesPerHour = toMilesPerHour(kilomerters);
-        System.out.println(milesPerHour);
-
-        printConversion(kilomerters);
-
-    }
-
     public static long toMilesPerHour (double kilometersPerHour) {
         long milesPerHour = -1;
         double milesInOneKm = 1.609;
