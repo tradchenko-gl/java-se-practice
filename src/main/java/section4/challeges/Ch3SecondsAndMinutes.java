@@ -7,7 +7,7 @@ public class Ch3SecondsAndMinutes {
         String hms = getDurationString (120, 59);
         System.out.println(hms);
 
-        hms = getDurationString(130);
+        hms = getDurationString(3945);
         System.out.println(hms);
 
     }
