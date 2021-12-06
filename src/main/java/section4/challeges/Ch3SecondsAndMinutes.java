@@ -4,10 +4,10 @@ public class Ch3SecondsAndMinutes {
 
     public static void main(String[] args) {
 
-        String hms = getDurationString (0, 0);
+        String hms = getDurationString (120, 59);
         System.out.println(hms);
 
-        hms = getDurationString(0);
+        hms = getDurationString(130);
         System.out.println(hms);
 
     }
@@ -15,7 +15,7 @@ public class Ch3SecondsAndMinutes {
     public static String getDurationString (int minutes, int seconds) {
 
         String hoursMinutesSeconds = "Invalid value";
-        int hours = 0;
+        int hours;
 
         if (minutes >= 0 && seconds >= 0 && seconds <= 59) {
             hours = Math.round(minutes / 60);
@@ -29,7 +29,7 @@ public class Ch3SecondsAndMinutes {
 
     public static String getDurationString (int seconds) {
         String hoursMinutesSeconds = "Invalid value";
-        int minutes = 0;
+        int minutes;
 
         if (seconds >= 0) {
             minutes = Math.round(seconds/60);
