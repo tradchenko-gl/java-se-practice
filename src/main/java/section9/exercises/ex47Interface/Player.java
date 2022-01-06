@@ -1,4 +1,4 @@
-package section9.exercises.ex47;
+package section9.exercises.ex47Interface;
 
 import java.util.ArrayList;
 import java.util.List;
