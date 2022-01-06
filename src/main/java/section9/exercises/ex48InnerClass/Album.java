@@ -15,23 +15,20 @@ public class Album {
     }
 
     public boolean addSong (String name, double duration) {
-        if(songs.findSong(name) == null) {
-            songs.add(new Song(name, duration));
-            return true;
-        }
-        return false;
+        return this.songs.add(new Song(name, duration));
     }
 
     public boolean addToPlayList(int trackNumber, LinkedList<Song> playList) {
-        if(trackNumber > 0 && trackNumber <= songs.songs.size()) {
-            playList.add(songs.songs.get(trackNumber-1));
+        Song song = this.songs.findSong(trackNumber);
+        if (song != null) {
+            playList.add(song);
             return true;
         }
         return false;
     }
 
     public boolean addToPlayList(String songTitle, LinkedList<Song> playList) {
-        Song song = songs.findSong(songTitle);
+        Song song = this.songs.findSong(songTitle);
         if(song != null) {
             playList.add(song);
             return true;
@@ -60,9 +57,9 @@ public class Album {
         }
 
         private Song findSong (String title) {
-            for (int i = 0; i < songs.size(); i++) {
-                if(songs.get(i).getTitle() == title) {
-                    return songs.get(i);
+            for (Song checkedSong: this.songs) {
+                if(checkedSong.getTitle().equals(title)) {
+                    return checkedSong;
                 }
             }
             return null;
