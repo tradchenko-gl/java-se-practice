@@ -1,4 +1,4 @@
-package section11.challenge;
+package section11.challenges.series;
 
 public class Series {
 
