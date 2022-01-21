@@ -3,6 +3,7 @@ package section11.challenges.scope;
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
         X x = new X();
         x.x(x());
@@ -15,4 +16,5 @@ public class Main {
         scanner.close();
         return x;
     }
+
 }
