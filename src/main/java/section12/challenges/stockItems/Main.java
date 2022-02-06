@@ -9,10 +9,10 @@ public class Main {
 	    StockItem temp = new StockItem("bread", 0.86, 100);
         stockList.addStock(temp);
 
-        /*temp = new StockItem("cake", 1.10, 7);
+        temp = new StockItem("cake", 1.10, 7);
         stockList.addStock(temp);
 
-        temp = new StockItem("car", 12.50, 2);
+       /* temp = new StockItem("car", 12.50, 2);
         stockList.addStock(temp);
 
         temp = new StockItem("chair", 62.0, 10);
@@ -49,12 +49,15 @@ public class Main {
 
         timsBasket.addToBasket(stockList.get("bread"), 10);
         myBasket.addToBasket(stockList.get("bread"), 10);
+        myBasket.addToBasket(stockList.get("cake"), 2);
 
-        System.out.println("Reserved is: " + stockList.get("bread").getReserved());
+        System.out.println("Reserved bread: " + stockList.get("bread").getReserved());
+        System.out.println("Reserved cakes: " + stockList.get("cake").getReserved());
         timsBasket.removeFromBasket(stockList.get("bread"), 1);
         System.out.println("Reserved is: " + stockList.get("bread").getReserved());
         timsBasket.checkOut();
         myBasket.checkOut();
+        System.out.println(timsBasket);
         System.out.println(stockList);
 
 //        sellItem(timsBasket, "car", 1);
