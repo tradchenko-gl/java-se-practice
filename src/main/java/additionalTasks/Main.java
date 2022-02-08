@@ -1,5 +1,6 @@
 package additionalTasks;
 
+import additionalTasks.t10RemoveGivenChar.RemoveGivenChar;
 import additionalTasks.t1DuplicateChars.CountDuplicateCharacters;
 import additionalTasks.t2FirstNonRepeatingCharacter.FirstNonRepeatingCharacterInString;
 import additionalTasks.t3ReverseString.ReverseString;
@@ -52,6 +53,10 @@ public class Main {
         //Code to test #9 - remove duplicate characters
         System.out.println("========= ex9 ==========");
         System.out.println(RemoveDuplicateCharacters.removeDuplicateChars("dudplicate cdharactersd"));
+
+        //Code to test #10 - remove given character
+        System.out.println("========= ex10 ==========");
+        System.out.println(RemoveGivenChar.removeChar('a', "a string toA remove a"));
 
     }
 }
