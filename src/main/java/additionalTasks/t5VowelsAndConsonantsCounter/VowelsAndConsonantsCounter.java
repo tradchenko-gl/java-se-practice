@@ -57,8 +57,21 @@ public class VowelsAndConsonantsCounter {
     }
 
     public static VowelsAndConsonantsCounter countVowelsAndConsonants (String source) {
-        int vowelsCount = countVowels(source);
-        int consCount = countConsonants(source);
+//        int vowelsCount = countVowels(source);
+//        int consCount = countConsonants(source);
+        int vowelsCount = 0;
+        int consCount = 0;
+
+        for(int i = 0; i < source.length(); i++) {
+            char ch = source.charAt(i);
+            if(vowels.contains(String.valueOf(ch))) {
+                vowelsCount++;
+            } else {
+                if((int)ch >= 97 && (int)ch <= 122) {
+                    consCount++;
+                }
+            }
+        }
         return new VowelsAndConsonantsCounter(vowelsCount, consCount);
     }
 
