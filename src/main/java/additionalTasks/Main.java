@@ -5,6 +5,9 @@ import additionalTasks.t2FirstNonRepeatingCharacter.FirstNonRepeatingCharacterIn
 import additionalTasks.t3ReverseString.ReverseString;
 import additionalTasks.t4IfOnlyDigitsInString.IfOnlyDigitsInTheString;
 import additionalTasks.t5VowelsAndConsonantsCounter.VowelsAndConsonantsCounter;
+import additionalTasks.t6CharacterInTheString.CharInTheString;
+import additionalTasks.t8Palindrome.PalindromeWord;
+import additionalTasks.t9RemoveDuplicateChars.RemoveDuplicateCharacters;
 
 import java.util.HashMap;
 
@@ -35,7 +38,20 @@ public class Main {
         VowelsAndConsonantsCounter counter = VowelsAndConsonantsCounter.countVowelsAndConsonants("test string to count both");
         System.out.println("Vowels: " + counter.getVowelsCount() + "; Consonants: " + counter.getConsCount());
 
+        //Code to test #6 - count the occurrences of character in the string
+        System.out.println("========= ex6 ==========");
+        System.out.println(CharInTheString.countCharInTheString('q', "this is a string to test"));
 
+        //Code to test #7 - TO IMPLEMENT
+        System.out.println("========= ex7 ==========");
+
+        //Code to test #8 - check is string is palindrome
+        System.out.println("========= ex8 ==========");
+        System.out.println(PalindromeWord.isPalindrome("cattac"));
+
+        //Code to test #9 - remove duplicate characters
+        System.out.println("========= ex9 ==========");
+        System.out.println(RemoveDuplicateCharacters.removeDuplicateChars("dudplicate cdharactersd"));
 
     }
 }
