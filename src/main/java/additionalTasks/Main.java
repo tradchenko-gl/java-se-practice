@@ -1,8 +1,10 @@
 package additionalTasks;
 
 import additionalTasks.t10RemoveGivenChar.RemoveGivenChar;
+import additionalTasks.t11CharsWithTheMostAppearence.PopularChars;
 import additionalTasks.t1DuplicateChars.CountDuplicateCharacters;
 import additionalTasks.t2FirstNonRepeatingCharacter.FirstNonRepeatingCharacterInString;
+import additionalTasks.t11CharsWithTheMostAppearence.Pair;
 import additionalTasks.t3ReverseString.ReverseString;
 import additionalTasks.t4IfOnlyDigitsInString.IfOnlyDigitsInTheString;
 import additionalTasks.t5VowelsAndConsonantsCounter.VowelsAndConsonantsCounter;
@@ -57,6 +59,11 @@ public class Main {
         //Code to test #10 - remove given character
         System.out.println("========= ex10 ==========");
         System.out.println(RemoveGivenChar.removeChar('a', "a string toA remove a"));
+
+        //Code to test #11 - find most repeated character
+        System.out.println("========= ex11 ==========");
+        Pair<Character, Integer> aChar = PopularChars.findMostRepeatedChar("whatcharisthemostpopularhere?");
+        System.out.println(aChar.getCh() + ": " + aChar.getCount());
 
     }
 }
