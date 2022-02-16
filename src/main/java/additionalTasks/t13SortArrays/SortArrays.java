@@ -1,5 +1,7 @@
 package additionalTasks.t13SortArrays;
 
+import java.util.Arrays;
+
 public class SortArrays {
 
     public static void bubbleSort(int[] arr) {
@@ -16,28 +18,38 @@ public class SortArrays {
         }
     }
 
-    public static void quickSort(int[] arr, int start, int end) {
-        int pivot = arr[end/2];
-        int pPosition = end/2;
+    public static int partition (int[] arr, int start, int end) {
+        int pivot = arr[end];
         int temp;
-        for (int i = start; i < end; i++) {
-            if(arr[i] >= pivot) {
-                for (int j = end - 1; j > 0; j--) {
-                    if(arr[j] <= pivot) {
-                        if (i <= j) {
-                            temp = arr[i];
-                            arr[i] = arr[j];
-                            arr[j] = temp;
-                        }
-                    }
-                }
+        int i = start;
+        int j = end-1;
+        while(true) {
+            while (arr[i] <= pivot) {
+                i++;
+            }
+            while (arr[j] >= pivot) {
+                j--;
+            }
+            if (i >= j) {
+                break;
+            } else {
+                temp = arr[j];
+                arr[j] = arr[i];
+                arr[i] = temp;
             }
         }
-        if (end/2 > 1) {
-            quickSort(arr, 0, end/2-1);
-        }
-        if(end-end/2 > 1) {
-            quickSort(arr,end/2, end);
+        temp = arr[i];
+        arr[i] = pivot;
+        arr[end] = temp;
+
+        return i;
+    }
+
+    public static void quickSort(int arr[], int start, int end) {
+        if (start < end) {
+            int pivotIndex = partition(arr, start, end);
+            quickSort(arr, start, pivotIndex-1);
+            quickSort(arr, pivotIndex+1, end);
         }
     }
 

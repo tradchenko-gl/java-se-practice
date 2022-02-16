@@ -77,9 +77,11 @@ public class Main {
         String[] strings = {"asdrrr", "asdghfgh", "asdutukjk", "asdtjkfjgkf"};
         System.out.println(LongestCommonPrefix.findLongestCommonPrefix(strings));
 
-//        //Code to test #13 - Sorting
-//        System.out.println("========= ex13 ==========");
-//        int[] arrToSort = {1, 4, 20, 7, 21, 2};
+        //Code to test #13 - Sorting
+        System.out.println("========= ex13 ==========");
+        int[] arrToSort = {1, 4, 20, 7, 21, 2};
+        SortArrays.quickSort(arrToSort, 0, 5);
+        System.out.println(Arrays.toString(arrToSort));
 //        SortArrays.bubbleSort(arrToSort);
 //        System.out.println(Arrays.toString(arrToSort));
 //        int[] arr2 = {4,5,1,2,9,10,3};
