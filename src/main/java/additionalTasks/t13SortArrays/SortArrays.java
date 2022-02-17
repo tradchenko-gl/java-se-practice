@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 public class SortArrays {
 
+    //================ Bubble sort =======================
     public static void bubbleSort(int[] arr) {
         int arrSize = arr.length;
 
@@ -18,6 +19,7 @@ public class SortArrays {
         }
     }
 
+    //======================= quicksort ===========================
     public static int partition (int[] arr, int start, int end) {
         int pivot = arr[end];
         int temp;
@@ -51,6 +53,52 @@ public class SortArrays {
             quickSort(arr, start, pivotIndex-1);
             quickSort(arr, pivotIndex+1, end);
         }
+    }
+
+    //========================= mergersort ===================
+    public static int[] mergeSort(int[] arr) {
+        if (arr.length == 1) {
+            return arr;
+        } else {
+            int mid = arr.length/2;
+            int[] left = Arrays.copyOfRange(arr, 0, mid);
+            int[] right = Arrays.copyOfRange(arr, mid, arr.length);
+            return merge(mergeSort(left), mergeSort(right));
+        }
+
+    }
+
+    private static int[] merge(int [] left,int[] right) {
+        int length = left.length + right.length;
+        int[] sortedArray = new int[length];
+        int i = 0;
+        int j = 0;
+        int y = 0;
+
+        while(i < left.length && j < right.length) {
+            if(left[i] < right[j]) {
+                sortedArray[y] = left[i];
+                i++;
+            } else {
+                sortedArray[y] = right[j];
+                j++;
+            }
+            y++;
+        }
+
+        while (i < left.length)  {
+            sortedArray[y] = left[i];
+            i++;
+            y++;
+        }
+
+        while (j < right.length) {
+            sortedArray[y] = right[j];
+            j++;
+            y++;
+        }
+
+        return sortedArray;
     }
 
 }

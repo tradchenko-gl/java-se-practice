@@ -82,6 +82,9 @@ public class Main {
         int[] arrToSort = {1, 4, 20, 7, 21, 2};
         SortArrays.quickSort(arrToSort, 0, 5);
         System.out.println(Arrays.toString(arrToSort));
+        //Merge sort
+        int[] arrMergeSort = {5, 1, 8, 2, 9, 0, 7};
+        System.out.println(Arrays.toString(SortArrays.mergeSort(arrMergeSort)));
 //        SortArrays.bubbleSort(arrToSort);
 //        System.out.println(Arrays.toString(arrToSort));
 //        int[] arr2 = {4,5,1,2,9,10,3};
