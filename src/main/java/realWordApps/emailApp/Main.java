@@ -43,7 +43,7 @@ public class Main {
         if(numberOfStudents > 0) {
             int counter = 1;
             while(counter <= numberOfStudents) {
-                System.out.println("Please enter student #" + counter + "data: \n");
+                System.out.println("Please enter student #" + counter + " data: \n");
                 Student student = new Student();
                 students.add(student);
                 counter++;
@@ -52,5 +52,8 @@ public class Main {
 
         students.get(0).enrollStudentToACourse(math);
         students.get(0).printStudentData();
+
     }
+
+
 }

@@ -23,14 +23,9 @@ public class Student {
     }
 
     public Student () {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Please enter student name: " );
-        this.name = scanner.nextLine();
-        System.out.println("Please enter student balance: ");
-        this.balance = Double.parseDouble(scanner.nextLine());
-        System.out.println("Please enter student year: ");
-        this.year = scanner.nextInt();
+        this.name = enterStudentName();
+        this.balance = enterStudentBalace();
+        this.year = enterStudentYear();
 
         this.studentID = generateStudentID(this.year);
         this.coursesEnrolled = new ArrayList<>();
@@ -90,5 +85,47 @@ public class Student {
         return studentID;
     }
 
+    private double enterStudentBalace () {
+        Scanner scanner = new Scanner(System.in);
+        double bal;
+        do {
+            System.out.println("Please enter student balance: ");
+            while(!scanner.hasNextDouble()) {
+                System.out.println("Please enter valid balance: ");
+                scanner.next();
+            }
+            bal = scanner.nextDouble();
+
+        } while (bal < 0);
+        return bal;
+    }
+
+    private String enterStudentName() {
+        String studentName;
+        Scanner scanner = new Scanner(System.in);
+        do {
+            System.out.println("Enter student name: ");
+            while (!scanner.hasNextLine()) {
+                System.out.println("Please enter student name: ");
+                scanner.next();
+            } studentName = scanner.nextLine();
+        } while (studentName.length() <= 0);
+        return studentName;
+    }
+
+    private int enterStudentYear() {
+        int year;
+        Scanner scanner = new Scanner(System.in);
+        do {
+            System.out.println("Please enter student year (between 1 and 5): ");
+            while(!scanner.hasNextInt()) {
+                System.out.println("Please enter valid student year (number between 1 and 5): ");
+                scanner.next();
+            }
+            year = scanner.nextInt();
+
+        } while (year < 1 || year > 5);
+        return year;
+    }
 
 }
